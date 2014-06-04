@@ -15,7 +15,6 @@ import br.com.truefriends.service.UsuarioServico;
 import com.restfb.Connection;
 import com.restfb.DefaultFacebookClient;
 import com.restfb.FacebookClient;
-import com.restfb.types.FriendList;
 import com.restfb.types.User;
 
 
@@ -37,9 +36,6 @@ public class RecuperaUsuarioFacebook extends HttpServlet {
 	   User facebookUser = facebookCliente.fetchObject("me", User.class);
 	   Connection<User> friendsFB = facebookCliente.fetchConnection("me/friends", User.class);
 	   
-	   //FriendList friends = friendsFB.getData();
-	   
-	   //friends.get(1)
 	   String friendsName = "";
 	   for (int i=0;i < friendsFB.getData().size(); i++) {
 		  friendsName = friendsName + friendsFB.getData().get(i).getName() + "<br />";
