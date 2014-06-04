@@ -14,10 +14,12 @@ public UsuarioDAO(EntityManager em){
 }
 
 //Persiste o novo usuario do facebook
-public void persisteUsuario(Usuario usuario){
+public Usuario persisteUsuario(Usuario usuario){
 	em.getTransaction().begin();
-	em.merge(usuario);
+	usuario = em.merge(usuario);
     em.getTransaction().commit();
+    
+    return usuario;
 }
 
 

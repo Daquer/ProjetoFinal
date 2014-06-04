@@ -19,7 +19,7 @@ public UsuarioServico(){
 /*
  * @Parametro:Novo Usuário do Facebook
  */
-public void persisteUsuarioServico(User usuarioFacebook){
+public Usuario persisteUsuarioServico(User usuarioFacebook){
 	
 	
 	//O Usuario que será persistido
@@ -39,7 +39,8 @@ public void persisteUsuarioServico(User usuarioFacebook){
 	   usuario.setDataNascimento(usuarioFacebook.getBirthday());
 	
 	UsuarioDAO persiste = new UsuarioDAO(em);
-    persiste.persisteUsuario(usuario);	
+    return persiste.persisteUsuario(usuario);
+    
 }
 
 }
